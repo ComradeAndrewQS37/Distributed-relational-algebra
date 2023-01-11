@@ -7,7 +7,7 @@ App consists of three main parts:
 - [Manager](Manager/src/main/kotlin/) that receives expressions to calculate from client, loads them to queue for Workers, waits for result and sends back to Client
 - [Worker](Worker/src/main/kotlin/) that receives atomic tasks (only one operations with two tables) from RabbitMQ queue and sends replies to corresponding reply queues (multiple Workers can run at the same time)
 
-Manager is powered by [KTor](https://ktor.io/) and uses web sockets to interact with client: socket is opened when client wants to calculate new expression, closed when the result (successful or excpetional) was sent back to Client or if Client canceles the current task.
+Manager is powered by [KTor](https://ktor.io/) and uses web sockets to interact with client: socket is opened when client wants to calculate new expression, closed when the result (successful or exceptional) was sent back to Client or if Client canceles the current task.
 
 Manager and Worker use RabbitMQ to interact with each other.
 
@@ -19,8 +19,8 @@ docker compose up
 
 After that RabbitMQ, Worker(s) and Manager will run in separate containers. Number of Workers can be specified using deploy-replicas option in [docker-compose](install/docker-compose.yml) file.
 
-## Example
-Usage exaples are provided in [Client demo](Client/src/main/kotlin/Demo.kt) file. 
+## Examples
+Usage examples are provided in [Client demo](Client/src/main/kotlin/Demo.kt) file. 
 
 Creating tables and inserting data
 ```kotlin
