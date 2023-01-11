@@ -19,6 +19,8 @@ docker compose up
 
 After that RabbitMQ, Worker(s) and Manager will run in separate containers. Number of Workers can be specified using deploy-replicas option in [docker-compose](install/docker-compose.yml) file.
 
+After successful installation Client module can be used to run custom code for performing relational algebra calculations.
+
 ## Examples
 Usage examples are provided in [Client demo](Client/src/main/kotlin/Demo.kt) file. 
 
